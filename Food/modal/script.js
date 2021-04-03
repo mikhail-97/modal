@@ -1,35 +1,25 @@
-const modal = document.getElementById("myModal");
-const btn = document.getElementById("myBtn");
-const span = document.getElementsByClassName("close")[0];
-const secondBtn = document.getElementById("insideBtn");
-const secondModal = document.getElementById("myModalSecond");
-const secondSpan = document.getElementsByClassName("closeSecond")[0];
 
-btn.onclick = function () {
-  modal.style.display = "block";
-};
-span.onclick = function() {
-  modal.style.display = "none";
-};
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-secondBtn.onclick = function () {
-  secondModal.style.display = "block";
-  modal.style.display = "none";
-};
-secondSpan.onclick = function() {
-  secondModal.style.display = "none";
-  modal.style.display = "block";
-};
-window.onclick = function(event) {
-  if (event.target == secondModal) {
-    secondModal.style.display = "none";
-    modal.style.display = "block";
-  }
-};
+document.addEventListener('click', function (e) {
+    handleOpenModal(e)
+    handleCloseModal(e)
+})
 
+function handleOpenModal(e) {
+    const targetModal = e.target.dataset.modal
 
+    if (targetModal) {
+        const modal = document.querySelector(`#${targetModal}.modal`)
+        modal.style.display = "block"
+    }
+}
 
+function handleCloseModal(e) {
+    const target = e.target
+    const isCloseButton = target.classList.contains('j-close')
+    const isClickedOutside = target.classList.contains('modal')
+
+    if (isCloseButton || isClickedOutside) {
+        const parentModal = target.closest('.modal')
+        parentModal.style.display = "none"
+    }
+}

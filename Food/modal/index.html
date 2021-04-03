@@ -6,19 +6,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button id="myBtn">Open Modal</button>
-    <div id="myModal" class="modal">
+    <button data-modal="modal-1">Open 1 modal</button>
+    <button data-modal="modal-3">Open 3 modal</button>
+    <button data-modal="sign-in">Sign in</button>
+    <div id="modal-1" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="j-close close">&times;</span>
             <p>Модальное окно</p>
-            <button id="insideBtn">Open new Modal</button>
+            <button data-modal="modal-2">Open 2 modal</button>
         </div>
     </div>
-    <div id="myModalSecond" class="modalSecond">
-        <div class="modal-contentSecond">
-            <span class="closeSecond">&times;</span>
+    <div id="modal-2" class="modal">
+        <div class="modal-content">
+            <span class="j-close close">&times;</span>
             <p>Привет, Тимур</p>
-            <button id="insideBtnsecond">Open new Modal</button>
+            <p>Как</p>
+            <p>У</p>
+            <p>тебя дела</p>
+        </div>
+    </div>
+    <div id="modal-3" class="modal">
+        <div class="modal-content">
+            <span class="j-close close">&times;</span>
+            <p>3 модалка</p>
+        </div>
+    </div>
+    <div id="sign-in" class="modal">
+        <div class="modal-content">
+            <span class="j-close close">&times;</span>
+            <h2>Sign in</h2>
+            <form action="">
+                <div style="margin-bottom: 10px">
+                    <div><label for="email">Email</label></div>
+                    <div><input placeholder="Input email" type="email" name="email" id="email"></div>
+                </div>
+                <div style="margin-bottom: 20px">
+                    <div><label for="password">Password</label></div>
+                    <div><input placeholder="Input password" type="password" name="password" id="password"></div>
+                </div>
+                <div>
+                    <button>Sign in</button>
+                </div>
+            </form>
         </div>
     </div>
     <script src="script.js"></script>
